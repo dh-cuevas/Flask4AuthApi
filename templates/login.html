@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>Flask Auth0 Login</title>
+</head>
+<body>
+  {% if user %}
+    <h2>Bienvenido, {{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <img src="{{ user.picture }}" alt="Avatar" width="80"><br>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+  {% else %}
+    <h2>Iniciar sesión con Auth0</h2>
+    <a href="{{ url_for('login') }}">Login</a>
+  {% endif %}
+</body>
+</html>
+
+
